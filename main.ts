@@ -40,12 +40,14 @@ basic.forever(function () {
         comment.comment("Insert A-Button Action Between These Comments")
         wuKong.setAllMotor(-100, 100)
         basic.pause(200)
+        wuKong.stopAllMotor()
         comment.comment("Insert A-Button Action Between These Comments")
         action = "Z"
     } else if (action == "B") {
         comment.comment("Insert B-Button Action Between These Comments")
         wuKong.setAllMotor(100, -100)
         basic.pause(200)
+        wuKong.stopAllMotor()
         comment.comment("Insert B-Button Action Between These Comments")
         action = "Z"
     } else if (action == "AB") {
@@ -72,7 +74,7 @@ basic.forever(function () {
         action = "Z"
     } else {
         comment.comment("DO NOT CHANGE!")
-        wuKong.setMotorSpeed(wuKong.MotorList.M1, yValue + xValue)
-        wuKong.setMotorSpeed(wuKong.MotorList.M2, yValue - xValue)
+        wuKong.setMotorSpeed(wuKong.MotorList.M1, -1 * (yValue + xValue))
+        wuKong.setMotorSpeed(wuKong.MotorList.M2, -1 * (yValue - xValue))
     }
 })
