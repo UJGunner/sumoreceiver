@@ -68,7 +68,7 @@ basic.forever(function () {
         action = "Z"
     } else if (action == "E") {
         comment.comment("Insert E-Button Action Between These Comments")
-        wuKong.setServoAngle(wuKong.ServoTypeList._360, wuKong.ServoList.S0, 10)
+        wuKong.setServoAngle(wuKong.ServoTypeList._360, wuKong.ServoList.S0, 0)
         comment.comment("Insert E-Button Action Between These Comments")
         action = "Z"
     } else if (action == "F") {
@@ -80,7 +80,7 @@ basic.forever(function () {
         action = "Z"
     } else {
         comment.comment("DO NOT CHANGE!")
-        wuKong.setMotorSpeed(wuKong.MotorList.M1, -1 * (yValue + xValue))
-        wuKong.setMotorSpeed(wuKong.MotorList.M2, -1 * (yValue - xValue))
+        wuKong.setMotorSpeed(wuKong.MotorList.M1, yValue + xValue)
+        wuKong.setMotorSpeed(wuKong.MotorList.M2, yValue - xValue)
     }
 })
